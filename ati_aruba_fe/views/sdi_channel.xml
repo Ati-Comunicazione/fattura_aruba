@@ -1,0 +1,30 @@
+<odoo>
+
+    <!--FORMVIEW SDI.CHANNEL-->
+    <record id="view_sdi_channel_form" model="ir.ui.view">
+        <field name="name">view_sdi_channel_aruba_form</field>
+        <field name="model">sdi.channel</field>
+        <field name="inherit_id" ref="l10n_it_sdi_channel.view_sdi_channel_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button name="web_auth" string="Connetti WS" class="btn btn-primary btn-default"
+                            type="object" attrs="{'invisible': [('channel_type','!=','web')]}"/>
+                </header>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <group string="WEBSERVICES" attrs="{'invisible': [('channel_type', '!=', 'web')]}">
+                    <field name="active_web_server" string="Default Web Service"/>
+                    <field name="provider" string="Provider"/>
+                    <field name="web_server_address" string="Auth Address" placeholder="https://auth.fatturazioneelettronica.aruba.it/auth/signin"/>
+                    <field name="web_server_method_address" string="Method Address" placeholder="https://ws.fatturazioneelettronica.aruba.it"/>
+                    <field name="web_server_login" string="Login"/>
+                    <field name="web_server_password" string="Password"/>
+                    <field name="web_server_token" string="Token" readonly="1" style="max-width: 900px; overflow-wrap: anywhere;"/>
+                    <field name="web_server_refresh_token" string="Refresh Token" style="max-width: 900px; overflow-wrap: anywhere;" readonly="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

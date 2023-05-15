@@ -1,0 +1,24 @@
+<odoo>
+
+    <!--FormView Fatture Elettronice In-->
+    <record id="view_fatturapa_in_attachment_form" model="ir.ui.view">
+        <field name="name">view_fatturapa_in_attachment_form</field>
+        <field name="model">fatturapa.attachment.in</field>
+        <field name="inherit_id" ref="l10n_it_fatturapa_in.view_fatturapa_in_attachment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="aruba_filename" string="File Aruba"/>
+                <field name="xml_error" string="Errore Descr."/>
+                <field name="ir_attachment_id_error"  string="Allegato con Errore (XML)"/>
+                <field name="import_error_message" string="Errore"/>
+                <field name="company_id" />
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="PDF">
+                    <field name="aruba_pdf" widget="pdf_viewer"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

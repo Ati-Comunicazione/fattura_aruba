@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sdi_notification,access_sdi_notification,model_sdi_notification,base.group_user,1,1,1,1
+access_wizard_fatturapa_send_aruba,access_wizard_fatturapa_send_aruba,model_wizard_fatturapa_send_aruba,base.group_user,1,1,1,1

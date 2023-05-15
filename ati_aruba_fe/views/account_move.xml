@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+
+        <!--Fatture Form-->
+        <record id="view_move_form_aruba" model="ir.ui.view">
+            <field name="name">view.invoice.aruba.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <!--Solo Fatture Fornitore XML-->
+                    <button name="get_aruba_pdf" string="Genera PDF (XML)" class="btn btn-primary btn-default" type="object" attrs="{'invisible': [('fatturapa_attachment_in_id', '=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--Fatture Vendita-->
+        <record id="view_invoice_aruba_tree" model="ir.ui.view">
+            <field name="name">view.invoice.aruba.tree</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="l10n_it_fatturapa_out.view_invoice_fatturapa_out_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='fatturapa_state']" position="replace">
+                    <field name="fatturapa_state" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--Fatture Vendita-->
+        <record id="view_invoice_tree" model="ir.ui.view">
+            <field name="name">view.invoice.tree</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_invoice_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="before">
+                    <field name="xml_generated" string="XML" />
+                    <field name="fatturapa_aruba_state_sdi"
+                           decoration-info="fatturapa_aruba_state_sdi == 'Inviata' "
+                           decoration-success="fatturapa_aruba_state_sdi in ['Consegnata', 'Non Consegnata'] "
+                           decoration-danger="fatturapa_aruba_state_sdi == 'Scartata' "
+                           widget="badge" string="SDI" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+
+
+
+
+
+
+    </data>
+</odoo>
