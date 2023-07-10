@@ -1,0 +1,16 @@
+{
+  "python.autoComplete.extraPaths": [
+    "C:/Users/Michele/OneDrive - aticomunicazione.it/Desktop/Documenti/GitHub/odoo-16.0",
+    //"/home/emi/odoo_repo/16.0/enterprise"
+  ],
+  "python.analysis.extraPaths": [
+    "C:/Users/Michele/OneDrive - aticomunicazione.it/Desktop/Documenti/GitHub/odoo-16.0",
+    //"/home/emi/odoo_repo/16.0/enterprise"
+  ],
+  //gli diamo le indicazioni su dove prendere tutti i moduli come addons, enterprice, themes
+  // "odoo.addonsPath": "C:/Users/Michele/OneDrive - aticomunicazione.it/Desktop/Documenti/GitHub/odoo-16.0/addons,/home/emi/odoo_repo/16.0/enterprise,/home/emi/odoo_repo/16.0/design-themes",
+  "odoo.addonsPath": "C:/Users/Michele/OneDrive - aticomunicazione.it/Desktop/Documenti/GitHub/odoo-16.0/addons",
+  "odoo.version": "16.0",
+  //specifica la versione di python con l'ambiente virutuale
+  // "python.defaultInterpreterPath": "/home/emi/odoo_virtualenvs/odoo16.0/bin/python"
+}

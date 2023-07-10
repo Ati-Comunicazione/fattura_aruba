@@ -5,3 +5,4 @@
 
 from . import payment_due_item
 from . import account_move
+from . import account_move_line

@@ -12,33 +12,27 @@
         </record>
 
         <template id="report_invoice_with_payments_due">
+            <t t-set="print_with_payments" t-value="True"/>
             <t t-call="web.html_container">
-                <t t-foreach="docs" t-as="o">
-                    <t t-call="huroos_payments_due.report_invoice_document_payments_due" />
-                </t>
+               <t t-foreach="docs" t-as="o">
+                    <t t-set="lang" t-value="o.partner_id.lang"/>
+                    <t t-set="print_with_payments" t-value="True"/>
+                    <t t-call="huroos_payments_due.report_invoice_document_payments_due" t-lang="lang"/>
+               </t>
             </t>
         </template>
 
         <template
                 id="report_invoice_document_payments_due"
                 inherit_id="account.report_invoice_document" priority="20" primary="True">
-            <xpath expr="//p[@name='payment_term']" position="replace"/>
             <xpath expr="//p[@name='payment_communication']" position="replace">
                 <div class="mt-6" id="informations">
                     <div class="row">
                         <div class="col-auto col-6" id="div_payment_communication">
-                            <p t-if="o.payment_reference and o.move_type in ('out_invoice', 'in_refund') "
-                               name="payment_communication">
-                                <small>
-                                    <b>Please use the following communication for your payment:</b>
-                                    <br></br>
+                            <p t-if="o.payment_reference and o.move_type in ('out_invoice', 'in_refund') " name="payment_communication">
+                                    Please use the following communication for your payment:
+                                    <br/>
                                     <span t-field="o.payment_reference"/>
-                                </small>
-                            </p>
-                            <p t-if="o.invoice_payment_term_id" name="payment_term">
-                                <small>
-                                    <span t-field="o.invoice_payment_term_id.note"/>
-                                </small>
                             </p>
                         </div>
                         <div class="col-6">
@@ -49,24 +43,19 @@
                             </p>
                             <div class="text-right">
                                 <small>
-                                    <table class="table-borderless"
-                                           style="width: 200px; page-break-inside: avoid;border: none !important;">
+                                    <table class="table-borderless" style="width: 200px; page-break-inside: avoid;border: none !important;">
                                         <tbody>
                                             <tr>
                                                 <t t-foreach="o.payment_due_ids" t-as="payment_due">
-                                                    <td class="text-right"
-                                                        style="background-color:white; color: #495057;border: none !important; padding-right: 10px">
-                                                        <span t-field="payment_due.due_date"
-                                                              t-options='{"format": "dd/MM/yy"}'/>
+                                                    <td class="text-right" style="background-color:white; color: #495057;border: none !important; padding-right: 10px">
+                                                        <span t-field="payment_due.due_date" t-options="{&quot;format&quot;: &quot;dd/MM/yy&quot;}"/>
                                                     </td>
                                                 </t>
                                             </tr>
                                             <tr>
                                                 <t t-foreach="o.payment_due_ids" t-as="payment_due">
-                                                    <td class="text-right"
-                                                        style="background-color:white; color: #495057;border: none !important; padding-right: 10px">
-                                                        <span t-field="payment_due.amount"
-                                                              t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                                    <td class="text-right" style="background-color:white; color: #495057;border: none !important; padding-right: 10px">
+                                                        <span t-field="payment_due.amount" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
                                                     </td>
                                                 </t>
                                             </tr>
@@ -79,6 +68,7 @@
                 </div>
             </xpath>
         </template>
+
     </data>
 </odoo>
 

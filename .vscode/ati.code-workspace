@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "name": "fattura_aruba",
+      "path": ".."
+    },
+    {
+      "name": "odoo-16.0",
+      "path": "../../odoo-16.0"
+    }
+  ]
+}

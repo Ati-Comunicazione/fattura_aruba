@@ -1,0 +1,83 @@
+{
+  //comandi che vengono passati a odoo-bin
+  "configurations": [
+    {
+      "name": "Run DB",
+      "type": "python",
+      "request": "launch",
+      "console": "integratedTerminal",
+      // "python": "/home/emi/odoo_virtualenvs/odoo${config:odoo.version}/bin/python", Versione di python
+      // "program": "/home/emi/odoo_repo/${config:odoo.version}/odoo/odoo-bin", Serve per il percorso di odoo-bin
+      "program": "C:/Users/Michele/OneDrive - aticomunicazione.it/Desktop/Documenti/GitHub/odoo-16.0/odoo-bin",
+      "args": [
+        "--database=training_17",
+        "--init=${input:odoo_modules}",
+        "--addons-path=${config:odoo.addonsPath},${workspaceFolder}",
+        // "--addons-path=${config:odoo.addonsPath}",
+        "--db_user=odoo",
+        "--db_password=admin",
+        // "--limit-time-cpu=0",
+        // "--limit-time-real=0"
+      ]
+    },
+    {
+      "name": "Run DB - update",
+      "type": "python",
+      "request": "launch",
+      "console": "integratedTerminal",
+      "python": "/home/emi/odoo_virtualenvs/odoo${config:odoo.version}/bin/python",
+      "program": "/home/emi/odoo_repo/${config:odoo.version}/odoo/odoo-bin",
+      "args": [
+        "--database=training_17",
+        "--update=${input:odoo_modules}",
+        "--addons-path=${config:odoo.addonsPath},${workspaceFolder}",
+        "--limit-time-cpu=0",
+        "--limit-time-real=0"
+      ]
+    },
+    // Lanciare la shell di odoo
+    {
+      "name": "Run Shell",
+      "type": "python",
+      "request": "launch",
+      "console": "integratedTerminal",
+      "python": "/home/emi/odoo_virtualenvs/odoo${config:odoo.version}/bin/python",
+      "program": "/home/emi/odoo_repo/${config:odoo.version}/odoo/odoo-bin",
+      "args": [
+        "shell",
+        "--database=training_17",
+        "--init=${input:odoo_modules}",
+        "--addons-path=${config:odoo.addonsPath},${workspaceFolder}",
+        "--limit-time-cpu=0",
+        "--limit-time-real=0"
+      ]
+    },
+    {
+      "name": "Docker: Python - General",
+      "type": "docker",
+      "request": "launch",
+      "preLaunchTask": "docker-run: debug",
+      "python": {
+        "pathMappings": [
+          {
+            "localRoot": "${workspaceFolder}",
+            "remoteRoot": "/app"
+          }
+        ],
+        "projectType": "general"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "odoo_modules",
+      "type": "promptString",
+      "description": "Odoo modules to update"
+    },
+    {
+      "id": "test_tags",
+      "type": "promptString",
+      "description": "Test Tags to run"
+    }
+  ]
+}

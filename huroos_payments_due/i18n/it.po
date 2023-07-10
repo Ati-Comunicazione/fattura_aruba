@@ -24,8 +24,8 @@ msgstr "\"%s Fattura %s\" % (object.state, object.name)"
 
 #. module: huroos_payments_due
 #: model_terms:ir.ui.view,arch_db:huroos_payments_due.report_invoice_document_payments_due
-msgid "<b>Please use the following communication for your payment:</b>\n"
-msgstr "<b>Riferimento pagamento:</b>\n"
+msgid "Please use the following communication for your payment:"
+msgstr "Riferimento pagamento:"
 
 #. module: huroos_payments_due
 #: model_terms:ir.ui.view,arch_db:huroos_payments_due.report_invoice_document_payments_due

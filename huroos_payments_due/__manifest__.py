@@ -4,14 +4,14 @@
 # © 2022 Huroos Srl. (<https://www.huroos.com>).
 
 {
-    'name': 'Scadenziario Pagamenti',
+    'name': 'Scadenziario PagamentiII',
     'version': '14.0.0.0',
     'summary': '',
-    'description': "Gestione Scadenziario Pagamenti",
+    'description': "Gestione Scadenziario Pagamenti (listview fatture) + permette di pagare le scadenze fornitori direttamente dallo scadenziario",
     'author': 'Huroos Srl',
     'website': 'https://www.huroos.com',
     'category': 'accounting',
-    'depends': ['account', 'l10n_it_fiscal_payment_term', 'l10n_it_fatturapa_in'],
+    'depends': ['account', 'l10n_it_fiscal_payment_term', 'l10n_it_fatturapa_in', 'account_due_list'],
     'data': [
         'security/ir.model.access.csv',
         'report/account_move.xml',
