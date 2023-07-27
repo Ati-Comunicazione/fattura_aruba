@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <!--FORMVIEW ACCOUNT MOVE-->
+        <record id="view_account_move_form" model="ir.ui.view">
+            <field name="name">account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//notebook" position="inside">
+                    <page string="Scadenza Pagamenti">
+                        <field name="payment_due_ids">
+                            <tree editable="top">
+                                <field name="move_line_id" string="Move Line"/>
+                                <field name="fatturapa_payment_method_id" string="Metodo" />
+                                <field name="due_date" string="Data Scadenza"/>
+                                <field name="amount" string="Importo" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!--TREEVIEW ACCOUNT MOVE INVOICE OUT-->
+        <record id="view_account_move_out_tree" model="ir.ui.view">
+            <field name="name">account.move.invoice.out.tree</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_invoice_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='invoice_date_due']" position="replace">
+                    <field name="payment_due_html" string="Scadenze" />
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <!--Registra Pagamento-->
+        <record id="action_account_invoice_due_list_payment" model="ir.actions.server">
+            <field name="name">Registra Pagamento</field>
+            <field name="groups_id" eval="[(4, ref('account.group_account_invoice'))]"/>
+            <field name="model_id" ref="account.model_account_move_line"/>
+            <field name="binding_model_id" ref="account.model_account_move_line"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                    action = records.action_register_payment()
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

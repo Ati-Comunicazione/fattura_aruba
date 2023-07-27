@@ -1,0 +1,120 @@
+# Translators:
+# Simone C. <s.cuffaro@huroos.com>, 2022
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* huroos_payments_due
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20220215\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-23 12:08+0000\n"
+"PO-Revision-Date: 2022-12-23 12:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: huroos_payments_due
+#: model:ir.actions.report,print_report_name:huroos_payments_due.action_report_invoice_with_payments_due
+msgid "\"%s invoice %s\" % (object.state, object.name)"
+msgstr "\"%s Fattura %s\" % (object.state, object.name)"
+
+#. module: huroos_payments_due
+#: model_terms:ir.ui.view,arch_db:huroos_payments_due.report_invoice_document_payments_due
+msgid "Please use the following communication for your payment:"
+msgstr "Riferimento pagamento:"
+
+#. module: huroos_payments_due
+#: model_terms:ir.ui.view,arch_db:huroos_payments_due.report_invoice_document_payments_due
+msgid "<small><b>Due dates:</b></small>"
+msgstr "<small><b>Scadenze:</b></small>"
+
+#. module: huroos_payments_due
+#: model:ir.model.fields,field_description:huroos_payments_due.field_payment_due_item__amount
+msgid "Amount"
+msgstr "Importo"
+
+#. module: huroos_payments_due
+#: model:ir.model.fields,field_description:huroos_payments_due.field_payment_due_item__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: huroos_payments_due
+#: model:ir.model.fields,field_description:huroos_payments_due.field_payment_due_item__create_date
+msgid "Created on"
+msgstr "Data creazione"
+
+#. module: huroos_payments_due
+#: model:ir.model.fields,field_description:huroos_payments_due.field_account_move__display_name
+#: model:ir.model.fields,field_description:huroos_payments_due.field_payment_due_item__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: huroos_payments_due
+#: model:ir.model.fields,field_description:huroos_payments_due.field_payment_due_item__due_date
+msgid "Due Date"
+msgstr "Data scadenza"
+
+#. module: huroos_payments_due
+#: model:ir.model.fields,field_description:huroos_payments_due.field_payment_due_item__fatturapa_payment_method_id
+msgid "Fatturapa Payment Method"
+msgstr "Metodo di pagamanto"
+
+#. module: huroos_payments_due
+#: model_terms:ir.ui.view,arch_db:huroos_payments_due.view_account_move_form
+msgid "Importo"
+msgstr "Amount"
+
+#. module: huroos_payments_due
+#: model:ir.actions.report,name:huroos_payments_due.action_report_invoice_with_payments_due
+msgid "Invoice with Payments due"
+msgstr "Fatture con date scadenza"
+
+#. module: huroos_payments_due
+#: model:ir.model,name:huroos_payments_due.model_account_move
+msgid "Journal Entry"
+msgstr "Registrazione contabile"
+
+#. module: huroos_payments_due
+#: model:ir.model.fields,field_description:huroos_payments_due.field_account_move____last_update
+#: model:ir.model.fields,field_description:huroos_payments_due.field_payment_due_item____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: huroos_payments_due
+#: model:ir.model.fields,field_description:huroos_payments_due.field_payment_due_item__write_uid
+msgid "Last Updated by"
+msgstr "Ultima modifica effettuata da"
+
+#. module: huroos_payments_due
+#: model:ir.model.fields,field_description:huroos_payments_due.field_payment_due_item__write_date
+msgid "Last Updated on"
+msgstr "Ultima modifica il"
+
+#. module: huroos_payments_due
+#: model:ir.model.fields,field_description:huroos_payments_due.field_payment_due_item__move_id
+msgid "Move"
+msgstr "Movimento"
+
+#. module: huroos_payments_due
+#: model:ir.model.fields,field_description:huroos_payments_due.field_payment_due_item__move_line_id
+#: model_terms:ir.ui.view,arch_db:huroos_payments_due.view_account_move_form
+msgid "Move Line"
+msgstr "Linea movimento"
+
+#. module: huroos_payments_due
+#: model:ir.model.fields,field_description:huroos_payments_due.field_account_bank_statement_line__payment_due_ids
+#: model:ir.model.fields,field_description:huroos_payments_due.field_account_move__payment_due_ids
+#: model:ir.model.fields,field_description:huroos_payments_due.field_account_payment__payment_due_ids
+msgid "Payment Due"
+msgstr "Data scadenza"
+
+#. module: huroos_payments_due
+#: model:ir.model.fields,field_description:huroos_payments_due.field_account_bank_statement_line__payment_due_html
+#: model:ir.model.fields,field_description:huroos_payments_due.field_account_move__payment_due_html
+#: model:ir.model.fields,field_description:huroos_payments_due.field_account_payment__payment_due_html
+msgid "Payment Due Html"
+msgstr "Scadenze HTML"
